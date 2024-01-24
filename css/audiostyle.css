@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+audio {
+    margin-right: 20px; /* Optional: Add margin for spacing between audio player and description */
+}
