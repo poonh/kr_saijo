@@ -8,12 +8,12 @@
 }
 
 /* First column */
-.first-column .image-container {
+.narrow-column .image-container {
     margin-right: 1%; /* Adjust the margin for the first column */
 }
 
 /* Second column */
-.second-column .image-container {
+.wide-column .image-container {
     margin-right: 3%; /* Adjust the margin for the second column */
 }
 
