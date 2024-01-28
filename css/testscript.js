@@ -1,13 +1,17 @@
-function openModal(imageSrc, description) {
-    var modal = document.getElementById('myModal');
-    var modalImage = document.getElementById('modalImage');
-    var captionText = document.getElementById('caption');
+function showImage(largeImagePath, imageTitle) {
+    // Get the modal and modal image elements
+    var modal = document.getElementById('modal');
+    var modalImg = document.getElementById('modalImage');
 
+    // Set the image source and alt text
+    modalImg.src = largeImagePath;
+    modalImg.alt = imageTitle;
+
+    // Display the modal
     modal.style.display = 'block';
-    modalImage.src = imageSrc;
-    captionText.innerHTML = description;
 }
 
 function closeModal() {
-    document.getElementById('myModal').style.display = 'none';
+    // Hide the modal
+    document.getElementById('modal').style.display = 'none';
 }
