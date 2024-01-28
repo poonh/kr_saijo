@@ -99,7 +99,31 @@ article img.aligncenter, article img.alignnone {
 var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https://yhcqw.github.io/yhcq/","hash_tracking":"false","ua":"","v4_id":"G-SRWB8QYGYF"};/* ]]> */
 </script>
 
+<script>
+    function showImage(largeImagePath, imageTitle) {
+        // Create a modal element
+        var modal = document.createElement('div');
+        modal.className = 'modal';
 
+        // Create an image element inside the modal
+        var modalImg = document.createElement('img');
+        modalImg.src = largeImagePath;
+        modalImg.alt = imageTitle;
+
+        // Append the image to the modal
+        modal.appendChild(modalImg);
+
+        // Append the modal to the body
+        document.body.appendChild(modal);
+
+        // Close the modal when clicked outside the image
+        modal.onclick = function() {
+            document.body.removeChild(modal);
+        };
+    }
+</script>
+
+	
 <script  src="js/818c0.js"></script> <!-- mobile menu does not work without this -->
 <script type='text/javascript' id='customscript-js-extra'>
 /* <![CDATA[ */
@@ -207,8 +231,11 @@ body { font-family: 'Roboto'; font-weight: normal; font-size: 16px; color: #0000
 
 <!--------content begins--------->
 
-	
+<img src="pictures/vietnam_guitar.JPG" alt="Image 1" onclick="showImage('pictures/vietnam_guitar.JPG', 'Image 1')">
+<img src="pictures/vietnam_guitar.JPG" alt="Image 2" onclick="showImage('pictures/vietnam_guitar.JPG', 'Image 2')">
+<!-- Add more images as needed -->
 
+<!--
  <div class="gallery narrow-column">
     <div class="image-container" onclick="openModal('pictures/vietnam_guitar.JPG', 'Description A')">
         <img src="pictures/vietnam_guitar.JPG" alt="A">
@@ -224,24 +251,13 @@ body { font-family: 'Roboto'; font-weight: normal; font-size: 16px; color: #0000
 
 </div>
 
-
+-->
 
 
 
 
 
 	 
-
-
-<div id="myModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <img id="modalImage" alt="">
-        <div class="caption" id="caption"></div>
-    </div>
-</div>
-
-<script src="css/picturesscript.js"></script>
 
 
 
