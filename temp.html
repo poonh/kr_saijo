@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .gallery img {
+            width: 48%;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .close {
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="gallery">
+    <div class="image-container" onclick="openModal('pictures/refugee_camp.JPG', 'Description A')">
+        <img src="pictures/refugee_camp.JPG" alt="A">
+           <p>越南难民营订婚宴（80年代）
+		</br>ベトナム難民キャンプでの婚約パーティー（1980年代)</p>
+    </div>
+    
+    <div class="image-container" onclick="openModal('pictures/french_class.PNG'', 'Description B')">
+        <img src="pictures/french_class.PNG'" alt="B">
+      <p>越南难民营法语班（80年代，叶家大小姐为前排数起第三排右二深色衣服）
+    </br>ベトナム難民キャンプでのフランス語の授業（1980年代、葉沢家のファーストレディは前から数えて3列目、右から2番目の黒いドレスの人）</p>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <img id="modalImage" alt="">
+        <div class="caption" id="caption"></div>
+    </div>
+</div>
+
+<script>
+    function openModal(imageSrc, description) {
+        var modal = document.getElementById('myModal');
+        var modalImage = document.getElementById('modalImage');
+        var captionText = document.getElementById('caption');
+
+        modal.style.display = 'block';
+        modalImage.src = imageSrc;
+        captionText.innerHTML = description;
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
